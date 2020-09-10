@@ -18,6 +18,6 @@ public class MyController {
 
     @GetMapping("/hello")
     private String hello(){
-        return "Hello World  !  端口："+serverPort;
+        return "Hello World!  端口："+serverPort;
     }
 }
