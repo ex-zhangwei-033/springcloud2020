@@ -1,5 +1,6 @@
 package com.zhangwei.example.springbootdemo80.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +13,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MyController {
 
+    @Value("${server.port}")
+    private String serverPort;
+
     @GetMapping("/hello")
     private String hello(){
-        return "Hello World";
+        return "Hello World  !  端口："+serverPort;
     }
 }
